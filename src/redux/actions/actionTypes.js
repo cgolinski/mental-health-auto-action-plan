@@ -1,3 +1,3 @@
 export const ACTION_TYPES = {
-  //   GET_DATA: "GET_DATA"
+  TOGGLE_SHOUT: 'TOGGLE_SHOUT'
 };

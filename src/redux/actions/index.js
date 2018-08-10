@@ -1,6 +1,5 @@
 import { ACTION_TYPES } from './actionTypes';
 
-// export const inputChange = value => ({
-//   type: ACTION_TYPES.INPUT_CHANGE,
-//   payload: value
-// });
+export const toggleShout = () => ({
+  type: ACTION_TYPES.TOGGLE_SHOUT
+});

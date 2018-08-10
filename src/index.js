@@ -6,9 +6,9 @@ import { createLogger } from 'redux-logger';
 import { Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-import rootReducer from './redux/reducers';
 import './index.css';
 import App from './App';
+import rootReducer from './redux/reducers';
 import registerServiceWorker from './registerServiceWorker';
 
 const loggerMiddleware = createLogger();
