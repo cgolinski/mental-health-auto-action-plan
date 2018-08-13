@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createSelector, createStructuredSelector } from 'reselect';
 
-import { toggleShout } from '../redux/actions';
+import { toggleShout } from '../core/actions';
 
 const ShoutComponent = props => (
   <div>
@@ -12,7 +13,13 @@ const ShoutComponent = props => (
   </div>
 );
 
+const selectShouting = state => state.shout.shouting;
+
+const mapStateToProps = createStructuredSelector({
+  shouting: createSelector(selectShouting, shouting => shouting)
+});
+
 export const Shout = connect(
-  state => ({ shouting: state.shout.shouting }),
+  mapStateToProps,
   { toggleShout }
 )(ShoutComponent);

@@ -7,8 +7,8 @@ import { Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 import './index.css';
-import App from './App';
-import rootReducer from './redux/reducers';
+import App from './ui/app';
+import rootReducer from './core/reducers';
 import registerServiceWorker from './registerServiceWorker';
 
 const loggerMiddleware = createLogger();
