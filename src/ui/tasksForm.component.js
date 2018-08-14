@@ -1,7 +1,7 @@
 import React from 'react';
 import { Control, Form, actions } from 'react-redux-form';
 
-const renderTask = taskNumber => (
+const Task = ({ taskNumber }) => (
   <div>
     <label htmlFor="tasks.summary">Enter task:</label>
     <Control.text model={`tasks[${taskNumber}].summary`} id="tasks.summary" />
@@ -36,6 +36,14 @@ const renderTask = taskNumber => (
 );
 
 class TasksForm extends React.Component {
+  state = {
+    numberOfTaskRows: 3
+  };
+
+  addRow = () => {
+    this.setState({ numberOfTaskRows: this.state.numberOfTaskRows + 1 });
+  };
+
   handleSubmit(user) {
     // Do whatever you like in here.
     // If you connect the UserForm to the Redux store,
@@ -44,18 +52,13 @@ class TasksForm extends React.Component {
     // etc.
   }
 
-  state = {
-    numberOfTaskRows: 3
-    // if click add task button, setState to state.taskCount + 1
-    // somehow this needs to translate into an array of tasks that get put into state
-  };
-
   render() {
     return (
       <Form model="tasks" onSubmit={user => this.handleSubmit(user)}>
-        {Array.from({ length: this.state.numberOfTaskRows }, (num, i) =>
-          renderTask(i)
-        )}
+        {Array.from({ length: this.state.numberOfTaskRows }, (num, i) => (
+          <Task taskNumber={i} key={i} />
+        ))}
+        <button onClick={this.addRow}>Add another row</button>
         <button type="submit">Finish registration!</button>
       </Form>
     );
