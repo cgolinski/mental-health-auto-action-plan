@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  Control,
-  Errors,
-  Form
-  // actions
-} from 'react-redux-form';
+import { Control, Errors, Form } from 'react-redux-form';
 
 const Task = ({ taskNumber }) => (
   <div style={{ paddingBottom: '50px' }}>

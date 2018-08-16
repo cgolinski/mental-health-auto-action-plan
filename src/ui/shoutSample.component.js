@@ -19,7 +19,7 @@ const mapStateToProps = createStructuredSelector({
   shouting: createSelector(selectShouting, shouting => shouting)
 });
 
-export const Shout = connect(
+export const ShoutSample = connect(
   mapStateToProps,
   { toggleShout }
 )(ShoutComponent);

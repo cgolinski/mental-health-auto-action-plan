@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Shout } from './shout.component';
+// import { ShoutSample } from './shoutSample.component';
 import MySampleForm, {
   MyConnectedSampleForm,
   MySecondSampleForm
@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div className="App" style={{ paddingTop: '50px', textAlign: 'center' }}>
         Mental health app
-        {/* <Shout /> */}
+        {/* <ShoutSample /> */}
         <div style={{ paddingTop: '50px' }}>
           User Form
           <UserForm />
