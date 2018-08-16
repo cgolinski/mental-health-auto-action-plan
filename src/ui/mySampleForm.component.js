@@ -1,16 +1,61 @@
 import React from 'react';
-import { Control, Form, actions, track } from 'react-redux-form';
+import {
+  Control,
+  Form,
+  // actions,
+  Errors
+} from 'react-redux-form';
+import { createSelector, createStructuredSelector } from 'reselect';
+import { connect } from 'react-redux';
 
 const renderSample = j => (
   <div key={j}>
-    <label htmlFor="mySample.firstName">First name:</label>
-    <Control.text
-      model={track(`mySample[${j}].firstName`)}
-      id="mySample.firstName"
-    />
-
-    <label htmlFor="mySample.lastName">Last name:</label>
-    <Control.text model={`mySample[${j}].lastName`} id="mySample.lastName" />
+    <div>
+      <label htmlFor="mySample.firstName">First name:</label>
+      <Control.text
+        model={`mySample[${j}].firstName`}
+        id="mySample.firstName"
+        validators={{
+          required: val => val && val.length
+          // minLength: val => val.length >= 5
+        }}
+        errors={{
+          required: val => !val || !val.length
+        }}
+      />
+      <Errors
+        className="errors"
+        model={`mySample[${j}].firstName`}
+        show="touched"
+        messages={{
+          required: 'Required'
+          // minLength: 'Must be 5 or more characters'
+        }}
+      />
+    </div>
+    <div>
+      <label htmlFor="mySample.lastName">Last name:</label>
+      <Control.text
+        model={`mySample[${j}].lastName`}
+        id="mySample.lastName"
+        validators={{
+          required: val => val && val.length
+          // minLength: val => val.length >= 5
+        }}
+        errors={{
+          required: val => !val || !val.length
+        }}
+      />
+      <Errors
+        className="errors"
+        model={`mySample[${j}].lastName`}
+        show="touched"
+        messages={{
+          required: 'Required'
+          // minLength: 'Must be 5 or more characters'
+        }}
+      />
+    </div>
   </div>
 );
 

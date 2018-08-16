@@ -1,19 +1,20 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import {
-  combineForms,
+  // combineForms,
   createForms // optional
 } from 'react-redux-form';
 
 import { shoutReducer } from './shout.reducer.js';
 
 // CAROLINE TODO: extract MySample code to its own reducer file
-const initialMySampleState = [
-  {
-    firstName: '',
-    lastName: ''
-  }
-];
+// const initialMySampleState = [
+//   {
+//     id: '',
+//     firstName: '',
+//     lastName: ''
+//   }
+// ];
 
 const initialUserState = {
   firstName: '',
@@ -40,7 +41,7 @@ export default combineReducers({
   routing: routerReducer,
   shout: shoutReducer,
   ...createForms({
-    mySample: initialMySampleState,
+    // mySample: initialMySampleState,
     user: initialUserState,
     tasks: initialTasksState
   })

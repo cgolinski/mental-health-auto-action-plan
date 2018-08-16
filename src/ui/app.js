@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 
 import { Shout } from './shout.component';
-import MySampleForm from './mySampleForm.component';
+import MySampleForm, {
+  MyConnectedSampleForm,
+  MySecondSampleForm
+} from './mySampleForm.component';
 import UserForm from './userForm.component';
 import TasksForm from './tasksForm.component';
 
@@ -10,11 +13,7 @@ class App extends Component {
     return (
       <div className="App" style={{ paddingTop: '50px', textAlign: 'center' }}>
         Mental health app
-        <Shout />
-        <div style={{ paddingTop: '50px' }}>
-          My Sample Form
-          <MySampleForm />
-        </div>
+        {/* <Shout /> */}
         <div style={{ paddingTop: '50px' }}>
           User Form
           <UserForm />
