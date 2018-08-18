@@ -69,11 +69,14 @@ class UserForm extends React.Component {
             model="user.email"
             id="user.email"
             validators={{
-              required: val => val && val.length
-              // minLength: val => val.length >= 5
+              required: val => val && val.length,
+              validEmailFormat: val =>
+                /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
             }}
             errors={{
-              required: val => !val || !val.length
+              required: val => !val || !val.length,
+              validEmailFormat: val =>
+                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
             }}
           />{' '}
           <Errors
@@ -81,8 +84,8 @@ class UserForm extends React.Component {
             model="user.email"
             show="touched"
             messages={{
-              required: 'Required'
-              // minLength: 'Must be 5 or more characters'
+              required: 'Required',
+              validEmailFormat: 'Invalid email address'
             }}
           />
         </div>
@@ -92,11 +95,14 @@ class UserForm extends React.Component {
             model="user.mobilePhone"
             id="user.mobilePhone"
             validators={{
-              required: val => val && val.length
-              // minLength: val => val.length >= 5
+              required: val => val && val.length,
+              validPhoneNumber: val => /^[0-9]{5,12}$/i.test(val)
+              // CAROLINE TODO: ^ Research how to validate international phone numbers
+              // CAROLINE TODO: ^ Research what the i is after the regex string
             }}
             errors={{
-              required: val => !val || !val.length
+              required: val => !val || !val.length,
+              validPhoneNumber: val => !/^[0-9]{5,12}$/i.test(val)
             }}
           />{' '}
           <Errors
@@ -104,8 +110,8 @@ class UserForm extends React.Component {
             model="user.mobilePhone"
             show="touched"
             messages={{
-              required: 'Required'
-              // minLength: 'Must be 5 or more characters'
+              required: 'Required',
+              validPhoneNumber: 'Invalid phone number'
             }}
           />
         </div>

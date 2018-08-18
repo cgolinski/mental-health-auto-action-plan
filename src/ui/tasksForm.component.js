@@ -27,26 +27,18 @@ const Task = ({ taskNumber }) => (
       />
     </div>
     <div>
-      <label htmlFor="tasks.details">More details?:</label>
+      <label htmlFor="tasks.details">More details:</label>
       <Control.text
         model={`tasks[${taskNumber}].details`}
         id="tasks.details"
-        validators={{
-          required: val => val && val.length
-          // minLength: val => val.length >= 5
-        }}
-        errors={{
-          required: val => !val || !val.length
-        }}
+        validators={{}}
+        errors={{}}
       />
       <Errors
         className="errors"
         model={`tasks[${taskNumber}].details`}
         show="touched"
-        messages={{
-          required: 'Required'
-          // minLength: 'Must be 5 or more characters'
-        }}
+        messages={{}}
       />
     </div>
     <div>
@@ -54,22 +46,14 @@ const Task = ({ taskNumber }) => (
       <Control.text
         model={`tasks[${taskNumber}].frequency`}
         id="tasks.frequency"
-        validators={{
-          required: val => val && val.length
-          // minLength: val => val.length >= 5
-        }}
-        errors={{
-          required: val => !val || !val.length
-        }}
+        validators={{}}
+        errors={{}}
       />
       <Errors
         className="errors"
         model={`tasks[${taskNumber}].frequency`}
         show="touched"
-        messages={{
-          required: 'Required'
-          // minLength: 'Must be 5 or more characters'
-        }}
+        messages={{}}
       />
     </div>
     <div>
@@ -79,7 +63,6 @@ const Task = ({ taskNumber }) => (
         id="tasks.contact.firstName"
         validators={{
           required: val => val && val.length
-          // minLength: val => val.length >= 5
         }}
         errors={{
           required: val => !val || !val.length
@@ -91,7 +74,6 @@ const Task = ({ taskNumber }) => (
         show="touched"
         messages={{
           required: 'Required'
-          // minLength: 'Must be 5 or more characters'
         }}
       />
     </div>
@@ -102,7 +84,6 @@ const Task = ({ taskNumber }) => (
         id="tasks.contact.lastName"
         validators={{
           required: val => val && val.length
-          // minLength: val => val.length >= 5
         }}
         errors={{
           required: val => !val || !val.length
@@ -114,7 +95,6 @@ const Task = ({ taskNumber }) => (
         show="touched"
         messages={{
           required: 'Required'
-          // minLength: 'Must be 5 or more characters'
         }}
       />
     </div>
@@ -124,11 +104,14 @@ const Task = ({ taskNumber }) => (
         model={`tasks[${taskNumber}].contact.email`}
         id="tasks.contact.email"
         validators={{
-          required: val => val && val.length
-          // minLength: val => val.length >= 5
+          required: val => val && val.length,
+          validEmailFormat: val =>
+            /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
         }}
         errors={{
-          required: val => !val || !val.length
+          required: val => !val || !val.length,
+          validEmailFormat: val =>
+            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
         }}
       />
       <Errors
@@ -136,8 +119,8 @@ const Task = ({ taskNumber }) => (
         model={`tasks[${taskNumber}].contact.email`}
         show="touched"
         messages={{
-          required: 'Required'
-          // minLength: 'Must be 5 or more characters'
+          required: 'Required',
+          validEmailFormat: 'Invalid email address'
         }}
       />
     </div>
@@ -147,11 +130,12 @@ const Task = ({ taskNumber }) => (
         model={`tasks[${taskNumber}].contact.mobilePhone`}
         id="tasks.contact.mobilePhone"
         validators={{
-          required: val => val && val.length
-          // minLength: val => val.length >= 5
+          required: val => val && val.length,
+          validPhoneNumber: val => /^[0-9]{5,12}$/i.test(val)
         }}
         errors={{
-          required: val => !val || !val.length
+          required: val => !val || !val.length,
+          validPhoneNumber: val => !/^[0-9]{5,12}$/i.test(val)
         }}
       />
       <Errors
@@ -159,8 +143,8 @@ const Task = ({ taskNumber }) => (
         model={`tasks[${taskNumber}].contact.mobilePhone`}
         show="touched"
         messages={{
-          required: 'Required'
-          // minLength: 'Must be 5 or more characters'
+          required: 'Required',
+          validPhoneNumber: 'Invalid phone number'
         }}
       />
     </div>
