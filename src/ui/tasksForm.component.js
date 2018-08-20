@@ -2,6 +2,8 @@ import React from 'react';
 import { Form } from 'react-redux-form';
 
 import { Task } from './task.component.js';
+import { AddRowButton } from './tasksForm.style';
+import { Legend, RRFForm, SubmitButton } from './form.style';
 
 class TasksForm extends React.Component {
   state = {
@@ -23,15 +25,18 @@ class TasksForm extends React.Component {
 
   render() {
     return (
-      <Form model="tasks" onSubmit={tasks => this.handleSubmit(tasks)}>
+      <RRFForm model="tasks" onSubmit={tasks => this.handleSubmit(tasks)}>
+        <Legend>Tasks Form</Legend>
         {Array.from({ length: this.state.numberOfTaskRows }, (num, i) => (
           <Task taskNumber={i} key={i} />
         ))}
-        <button onClick={this.addTaskRow}>Add another task</button>
+        <AddRowButton onClick={this.addTaskRow}>
+          + Add another task
+        </AddRowButton>
         <div style={{ paddingTop: '20px' }}>
-          <button type="submit">Finish registration!</button>
+          <SubmitButton type="submit">Submit Tasks!</SubmitButton>
         </div>
-      </Form>
+      </RRFForm>
     );
   }
 }

@@ -11,13 +11,16 @@ import TasksForm from './tasksForm.component';
 class App extends Component {
   render() {
     return (
-      <div className="App" style={{ paddingTop: '50px', textAlign: 'center' }}>
+      <div
+        className="App"
+        style={{
+          paddingTop: '50px',
+          color: 'rgba(0, 0, 0, 0.8)'
+        }}
+      >
         Mental health app
         {/* <ShoutSample /> */}
-        <div style={{ paddingTop: '50px' }}>
-          User Form
-          <UserForm />
-        </div>
+        <UserForm />
         <div style={{ paddingTop: '50px' }}>
           <div>
             Think about what basic supports you would need should you reach a
@@ -34,6 +37,7 @@ class App extends Component {
           </div>
           <ul style={{ textDecoration: 'none', paddingBottom: '50px' }}>
             <li>Buy groceries</li>
+            <li>Prepare healthy meals</li>
             <li>Do laundry</li>
             <li>Walk the dog</li>
             <li>Feed the cats</li>
@@ -41,8 +45,6 @@ class App extends Component {
             <li>Help me pay bills</li>
             <li>Take me to my therapy appointment</li>
           </ul>
-          <div />
-          Tasks Form
           <TasksForm />
         </div>
       </div>

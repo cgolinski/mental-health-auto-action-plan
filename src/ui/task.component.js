@@ -1,11 +1,24 @@
 import React from 'react';
-import { Control, Errors } from 'react-redux-form';
+
+import {
+  Div,
+  Fieldset,
+  FormItemLabel,
+  RRFControlText,
+  RRFErrors,
+  Span
+} from './form.style';
 
 export const Task = ({ taskNumber }) => (
-  <div style={{ paddingBottom: '50px' }}>
-    <div>
-      <label htmlFor="tasks.summary">Enter task:</label>
-      <Control.text
+  <Fieldset ba b--transparent ph0 mh0 mv4>
+    <Div mv3>
+      <FormItemLabel htmlFor="tasks.summary">
+        <Span>Task</Span>
+        <Span gray normal pl1>
+          (what would you like help with?)
+        </Span>
+      </FormItemLabel>
+      <RRFControlText
         model={`tasks[${taskNumber}].summary`}
         id="tasks.summary"
         validators={{
@@ -15,7 +28,7 @@ export const Task = ({ taskNumber }) => (
           required: val => !val || !val.length
         }}
       />
-      <Errors
+      <RRFErrors
         className="errors"
         model={`tasks[${taskNumber}].summary`}
         show="touched"
@@ -23,40 +36,35 @@ export const Task = ({ taskNumber }) => (
           required: 'Required'
         }}
       />
-    </div>
-    <div>
-      <label htmlFor="tasks.details">More details:</label>
-      <Control.text
+    </Div>
+    <Div mv3>
+      <FormItemLabel htmlFor="tasks.details">
+        <Span>More details</Span>
+        <Span gray normal pl1>
+          (how? where? when?)
+        </Span>
+        <Span gray normal f7 pl1>
+          (optional)
+        </Span>
+      </FormItemLabel>
+      <RRFControlText
         model={`tasks[${taskNumber}].details`}
         id="tasks.details"
         validators={{}}
         errors={{}}
       />
-      <Errors
+      <RRFErrors
         className="errors"
         model={`tasks[${taskNumber}].details`}
         show="touched"
         messages={{}}
       />
-    </div>
-    <div>
-      <label htmlFor="tasks.frequency">Frequency:</label>
-      <Control.text
-        model={`tasks[${taskNumber}].frequency`}
-        id="tasks.frequency"
-        validators={{}}
-        errors={{}}
-      />
-      <Errors
-        className="errors"
-        model={`tasks[${taskNumber}].frequency`}
-        show="touched"
-        messages={{}}
-      />
-    </div>
-    <div>
-      <label htmlFor="tasks.contact.firstName">Contact's first name:</label>
-      <Control.text
+    </Div>
+    <Div mv3>
+      <FormItemLabel htmlFor="tasks.contact.firstName">
+        Contact's first name
+      </FormItemLabel>
+      <RRFControlText
         model={`tasks[${taskNumber}].contact.firstName`}
         id="tasks.contact.firstName"
         validators={{
@@ -66,7 +74,7 @@ export const Task = ({ taskNumber }) => (
           required: val => !val || !val.length
         }}
       />
-      <Errors
+      <RRFErrors
         className="errors"
         model={`tasks[${taskNumber}].contact.firstName`}
         show="touched"
@@ -74,10 +82,12 @@ export const Task = ({ taskNumber }) => (
           required: 'Required'
         }}
       />
-    </div>
-    <div>
-      <label htmlFor="tasks.contact.lastName">Contact's last name:</label>
-      <Control.text
+    </Div>
+    <Div mv3>
+      <FormItemLabel htmlFor="tasks.contact.lastName">
+        Contact's last name
+      </FormItemLabel>
+      <RRFControlText
         model={`tasks[${taskNumber}].contact.lastName`}
         id="tasks.contact.lastName"
         validators={{
@@ -87,7 +97,7 @@ export const Task = ({ taskNumber }) => (
           required: val => !val || !val.length
         }}
       />
-      <Errors
+      <RRFErrors
         className="errors"
         model={`tasks[${taskNumber}].contact.lastName`}
         show="touched"
@@ -95,10 +105,12 @@ export const Task = ({ taskNumber }) => (
           required: 'Required'
         }}
       />
-    </div>
-    <div>
-      <label htmlFor="tasks.contact.email">Contact's email:</label>
-      <Control.text
+    </Div>
+    <Div mv3>
+      <FormItemLabel htmlFor="tasks.contact.email">
+        Contact's email
+      </FormItemLabel>
+      <RRFControlText
         model={`tasks[${taskNumber}].contact.email`}
         id="tasks.contact.email"
         validators={{
@@ -112,7 +124,7 @@ export const Task = ({ taskNumber }) => (
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
         }}
       />
-      <Errors
+      <RRFErrors
         className="errors"
         model={`tasks[${taskNumber}].contact.email`}
         show="touched"
@@ -121,30 +133,32 @@ export const Task = ({ taskNumber }) => (
           validEmailFormat: 'Invalid email address'
         }}
       />
-    </div>
-    <div>
-      <label htmlFor="tasks.contact.mobilePhone">Contact's mobile phone:</label>
-      <Control.text
+    </Div>
+    <Div mv3>
+      <FormItemLabel htmlFor="tasks.contact.mobilePhone">
+        <Span>Contact's mobile phone</Span>
+        <Span gray normal f7 pl1>
+          (optional)
+        </Span>
+      </FormItemLabel>
+      <RRFControlText
         model={`tasks[${taskNumber}].contact.mobilePhone`}
         id="tasks.contact.mobilePhone"
         validators={{
-          required: val => val && val.length,
-          validPhoneNumber: val => /^[0-9]{5,12}$/i.test(val)
+          validPhoneNumber: val => !val || /^[0-9]{5,12}$/i.test(val)
         }}
         errors={{
-          required: val => !val || !val.length,
-          validPhoneNumber: val => !/^[0-9]{5,12}$/i.test(val)
+          validPhoneNumber: val => val && !/^[0-9]{5,12}$/i.test(val)
         }}
       />
-      <Errors
+      <RRFErrors
         className="errors"
         model={`tasks[${taskNumber}].contact.mobilePhone`}
         show="touched"
         messages={{
-          required: 'Required',
           validPhoneNumber: 'Invalid phone number'
         }}
       />
-    </div>
-  </div>
+    </Div>
+  </Fieldset>
 );
