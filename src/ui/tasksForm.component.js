@@ -1,9 +1,9 @@
 import React from 'react';
-import { Form } from 'react-redux-form';
 
 import { Task } from './task.component.js';
 import { AddRowButton } from './tasksForm.style';
 import { Legend, RRFForm, SubmitButton } from './form.style';
+import { Div, Span } from './app.style';
 
 class TasksForm extends React.Component {
   state = {
@@ -33,9 +33,9 @@ class TasksForm extends React.Component {
         <AddRowButton onClick={this.addTaskRow}>
           + Add another task
         </AddRowButton>
-        <div style={{ paddingTop: '20px' }}>
+        <Div pt4>
           <SubmitButton type="submit">Submit Tasks!</SubmitButton>
-        </div>
+        </Div>
       </RRFForm>
     );
   }

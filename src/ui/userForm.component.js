@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {
-  Div,
   Fieldset,
   FormItemLabel,
   Legend,
@@ -10,6 +9,8 @@ import {
   RRFForm,
   SubmitButton
 } from './form.style';
+
+import { Div } from './app.style';
 
 class UserForm extends React.Component {
   handleSubmit(user) {

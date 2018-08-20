@@ -1,13 +1,13 @@
 import React from 'react';
 
 import {
-  Div,
   Fieldset,
   FormItemLabel,
   RRFControlText,
-  RRFErrors,
-  Span
+  RRFErrors
 } from './form.style';
+
+import { Div, Span } from './app.style';
 
 export const Task = ({ taskNumber }) => (
   <Fieldset ba b--transparent ph0 mh0 mv4>

@@ -17,12 +17,6 @@ b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib
 SubmitButton.displayName = 'SubmitButton';
 // CAROLINE: Why is hover grow style not working?
 
-export const Div = styled('div')``;
-Div.displayName = 'Div';
-
-export const Span = styled('span')``;
-Span.displayName = 'Span';
-
 export const Fieldset = styled('fieldset')``;
 Fieldset.displayName = 'Fieldset';
 
