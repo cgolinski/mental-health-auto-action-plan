@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 
 // import { ShoutSample } from './shoutSample.component';
-import MySampleForm, {
-  MyConnectedSampleForm,
-  MySecondSampleForm
-} from './mySampleForm.component';
+// import MySampleForm from './mySampleForm.component';
 import UserForm from './userForm.component';
-import TasksForm from './tasksForm.component';
+import { TasksForm } from './tasksForm';
 import { TasksIntro } from './tasksIntro.component';
 import { Div, H1 } from './app.style';
 

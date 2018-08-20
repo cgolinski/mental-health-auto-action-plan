@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Task } from './task.component.js';
-import { AddRowButton } from './tasksForm.style';
-import { Legend, RRFForm, SubmitButton } from './form.style';
-import { Div, Span } from './app.style';
+import { Task } from '../task.component.js';
+import { AddRowButton } from './tasksForm.style.js';
+import { Legend, RRFForm, SubmitButton } from '../form.style';
+import { Div } from '../app.style';
 
-class TasksForm extends React.Component {
+export class TasksForm extends React.Component {
   state = {
     numberOfTaskRows: 3
   };
@@ -40,5 +40,3 @@ class TasksForm extends React.Component {
     );
   }
 }
-
-export default TasksForm;

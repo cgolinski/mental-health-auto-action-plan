@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Div } from './app.style';
 import {
   Intro,
   IntroWrapper,
@@ -21,19 +20,17 @@ export const TasksIntro = () => (
       this plan, you will click one button, and an email will be sent to each
       person in your plan, requesting their help.
     </Intro>
-    <SampleTasks>
-      Task ideas to get you started:
-      <SampleTasksUl>
-        <li>Buy groceries</li>
-        <li>Prepare healthy meals</li>
-        <li>Do laundry</li>
-        <li>Clean kitchen</li>
-        <li>Walk the dog</li>
-        <li>Feed the cats</li>
-        <li>Take the children to school</li>
-        <li>Help me pay bills</li>
-        <li>Take me to my therapy appointment</li>
-      </SampleTasksUl>
-    </SampleTasks>
+    <SampleTasks>Task ideas to get you started:</SampleTasks>
+    <SampleTasksUl>
+      <li>Buy groceries</li>
+      <li>Prepare healthy meals</li>
+      <li>Do laundry</li>
+      <li>Clean kitchen</li>
+      <li>Walk the dog</li>
+      <li>Feed the cats</li>
+      <li>Take the children to school</li>
+      <li>Help me pay bills</li>
+      <li>Take me to my therapy appointment</li>
+    </SampleTasksUl>
   </IntroWrapper>
 );

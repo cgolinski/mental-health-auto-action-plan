@@ -9,7 +9,6 @@ import {
   RRFForm,
   SubmitButton
 } from './form.style';
-
 import { Div } from './app.style';
 
 class UserForm extends React.Component {
@@ -32,7 +31,6 @@ class UserForm extends React.Component {
               id="user.firstName"
               validators={{
                 required: val => val && val.length
-                // minLength: val => val.length >= 5
               }}
               errors={{
                 required: val => !val || !val.length
@@ -44,7 +42,6 @@ class UserForm extends React.Component {
               show="touched"
               messages={{
                 required: 'Required'
-                // minLength: 'Must be 5 or more characters'
               }}
             />
           </Div>
@@ -55,7 +52,6 @@ class UserForm extends React.Component {
               id="user.lastName"
               validators={{
                 required: val => val && val.length
-                // minLength: val => val.length >= 5
               }}
               errors={{
                 required: val => !val || !val.length
@@ -67,7 +63,6 @@ class UserForm extends React.Component {
               show="touched"
               messages={{
                 required: 'Required'
-                // minLength: 'Must be 5 or more characters'
               }}
             />
           </Div>

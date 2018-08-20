@@ -26,7 +26,7 @@ export const FormItemLabel = styled('label')`
 FormItemLabel.displayName = 'FormItemLabel';
 
 export const RRFControlText = styled(Control.text)`
-  border-box pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 
+  border-box pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100
 `;
 // CAROLINE TODO: Why are hover styles not working?
 RRFControlText.displayName = 'RRFControlText';
