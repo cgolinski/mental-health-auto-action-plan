@@ -10,6 +10,8 @@ import rootReducer from './core/reducers';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import { App } from './ui/app';
+import { UserForm } from './ui/userForm/userForm.component';
+import { TasksPage } from './ui/tasksPage.component';
 
 const loggerMiddleware = createLogger();
 
@@ -25,6 +27,8 @@ const ReduxApp = () => (
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App} />
+      <Route path="sign-up" component={UserForm} />
+      <Route path="enter-tasks" component={TasksPage} />
     </Router>
   </Provider>
 );

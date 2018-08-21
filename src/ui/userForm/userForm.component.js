@@ -21,7 +21,7 @@ export class UserForm extends React.Component {
   }
   render() {
     return (
-      <RRFForm model="user" onSubmit={user => this.handleSubmit(user)}>
+      <RRFForm pt4 model="user" onSubmit={user => this.handleSubmit(user)}>
         <Legend>User Form</Legend>
         <Fieldset ba b--transparent ph0 mh0 mv4>
           <Div mv3>

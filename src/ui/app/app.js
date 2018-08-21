@@ -1,29 +1,18 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 // import { ShoutSample } from '../shoutSample.component';
-import { UserForm } from '../userForm/userForm.component';
-import { TasksForm } from '../tasksForm';
-import { TasksIntro } from '../tasksIntro/tasksIntro.component';
 
 import { Div, H1 } from './app.style';
 
 export class App extends Component {
   render() {
     return (
-      <Div
-        className="App"
-        style={{
-          paddingTop: '50px',
-          color: 'rgba(0, 0, 0, 0.8)'
-        }}
-      >
+      <Div pt4 flex flex-column className="App">
         <H1 pl4>Mental health app</H1>
         {/* <ShoutSample /> */}
-        <UserForm />
-        <Div pt6>
-          <TasksIntro />
-          <TasksForm />
-        </Div>
+        <Link to="/sign-up">Sign up</Link>
+        <Link to="/enter-tasks">Enter tasks</Link>
       </Div>
     );
   }
