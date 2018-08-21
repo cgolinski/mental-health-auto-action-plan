@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-// import { ShoutSample } from './shoutSample.component';
-// import MySampleForm from './mySampleForm.component';
-import UserForm from './userForm.component';
-import { TasksForm } from './tasksForm';
-import { TasksIntro } from './tasksIntro.component';
+// import { ShoutSample } from '../shoutSample.component';
+import { UserForm } from '../userForm/userForm.component';
+import { TasksForm } from '../tasksForm';
+import { TasksIntro } from '../tasksIntro/tasksIntro.component';
+
 import { Div, H1 } from './app.style';
 
-class App extends Component {
+export class App extends Component {
   render() {
     return (
       <Div
@@ -28,5 +28,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

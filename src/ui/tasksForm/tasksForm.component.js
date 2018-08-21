@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Task } from '../task.component.js';
-import { AddRowButton } from './tasksForm.style.js';
-import { Legend, RRFForm, SubmitButton } from '../form.style';
-import { Div } from '../app.style';
+import { Div } from '../app/app.style';
+import { Legend, RRFForm, SubmitButton } from '../shared/form/form.style';
+import { Task } from '../task/task.component';
+
+import { AddRowButton } from './tasksForm.style';
 
 export class TasksForm extends React.Component {
   state = {

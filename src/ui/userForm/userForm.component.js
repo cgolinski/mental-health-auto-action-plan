@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Div } from '../app/app.style';
 import {
   Fieldset,
   FormItemLabel,
@@ -8,10 +9,9 @@ import {
   RRFErrors,
   RRFForm,
   SubmitButton
-} from './form.style';
-import { Div } from './app.style';
+} from '../shared/form/form.style';
 
-class UserForm extends React.Component {
+export class UserForm extends React.Component {
   handleSubmit(user) {
     // Do whatever you like in here.
     // If you connect the UserForm to the Redux store,
@@ -127,5 +127,3 @@ class UserForm extends React.Component {
     );
   }
 }
-
-export default UserForm;

@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import { createLogger } from 'redux-logger';
 import { Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
+import { createStore, applyMiddleware } from 'redux';
+import { createLogger } from 'redux-logger';
 
-import './index.css';
-import App from './ui/app';
 import rootReducer from './core/reducers';
+import './index.css';
 import registerServiceWorker from './registerServiceWorker';
+import { App } from './ui/app';
 
 const loggerMiddleware = createLogger();
 
