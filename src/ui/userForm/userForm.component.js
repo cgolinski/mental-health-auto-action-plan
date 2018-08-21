@@ -122,7 +122,9 @@ export class UserForm extends React.Component {
           </Div>
         </Fieldset>
 
-        <SubmitButton type="submit">Sign Up!</SubmitButton>
+        <SubmitButton type="submit" shadow-hover>
+          Sign Up!
+        </SubmitButton>
       </RRFForm>
     );
   }

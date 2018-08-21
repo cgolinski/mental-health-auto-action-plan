@@ -14,6 +14,9 @@ export class TasksForm extends React.Component {
   addTaskRow = () => {
     this.setState({ numberOfTaskRows: this.state.numberOfTaskRows + 1 });
   };
+  removeLastTaskRow = () => {
+    this.setState({ numberOfTaskRows: this.state.numberOfTaskRows - 1 });
+  };
 
   handleSubmit(tasks) {
     console.log('You clicked submit!');
@@ -31,11 +34,18 @@ export class TasksForm extends React.Component {
         {Array.from({ length: this.state.numberOfTaskRows }, (num, i) => (
           <Task taskNumber={i} key={i} />
         ))}
-        <AddRowButton onClick={this.addTaskRow}>
-          + Add another task
-        </AddRowButton>
+        <Div flex flex-column items-start>
+          <AddRowButton onClick={this.addTaskRow} shadow-hover>
+            + Add another task
+          </AddRowButton>
+          <AddRowButton onClick={this.removeLastTaskRow} shadow-hover>
+            - Remove last task
+          </AddRowButton>
+        </Div>
         <Div pt4>
-          <SubmitButton type="submit">Submit Tasks!</SubmitButton>
+          <SubmitButton type="submit" shadow-hover>
+            Submit Tasks!
+          </SubmitButton>
         </Div>
       </RRFForm>
     );
