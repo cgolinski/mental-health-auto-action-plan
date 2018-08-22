@@ -8,3 +8,8 @@ export const submitTasks = tasks => ({
   type: ACTION_TYPES.SUBMIT_TASKS,
   payload: tasks
 });
+
+export const postTasks = tasks => ({
+  type: ACTION_TYPES.POST_TASKS,
+  payload: tasks
+});
