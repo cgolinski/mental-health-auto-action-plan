@@ -6,8 +6,7 @@ const initialTasksState = [
     details: '',
     frequency: '',
     contact: {
-      firstName: '',
-      lastName: '',
+      name: '',
       email: '',
       mobilePhone: null
     }

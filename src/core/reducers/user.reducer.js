@@ -1,8 +1,7 @@
 // import { ACTION_TYPES } from '../actions/actionTypes';
 
 const initialUserState = {
-  firstName: '',
-  lastName: '',
+  name: '',
   email: '',
   mobilePhone: null
 };

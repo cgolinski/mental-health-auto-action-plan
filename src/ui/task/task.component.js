@@ -60,12 +60,10 @@ export const Task = ({ taskNumber }) => (
       />
     </Div>
     <Div mv3>
-      <FormItemLabel htmlFor="tasks.contact.firstName">
-        Contact's first name
-      </FormItemLabel>
+      <FormItemLabel htmlFor="tasks.contact.name">Contact's name</FormItemLabel>
       <RRFControlText
-        model={`tasks[${taskNumber}].contact.firstName`}
-        id="tasks.contact.firstName"
+        model={`tasks[${taskNumber}].contact.name`}
+        id="tasks.contact.name"
         validators={{
           required: val => val && val.length
         }}
@@ -75,30 +73,7 @@ export const Task = ({ taskNumber }) => (
       />
       <RRFErrors
         className="errors"
-        model={`tasks[${taskNumber}].contact.firstName`}
-        show="touched"
-        messages={{
-          required: 'Required'
-        }}
-      />
-    </Div>
-    <Div mv3>
-      <FormItemLabel htmlFor="tasks.contact.lastName">
-        Contact's last name
-      </FormItemLabel>
-      <RRFControlText
-        model={`tasks[${taskNumber}].contact.lastName`}
-        id="tasks.contact.lastName"
-        validators={{
-          required: val => val && val.length
-        }}
-        errors={{
-          required: val => !val || !val.length
-        }}
-      />
-      <RRFErrors
-        className="errors"
-        model={`tasks[${taskNumber}].contact.lastName`}
+        model={`tasks[${taskNumber}].contact.name`}
         show="touched"
         messages={{
           required: 'Required'
