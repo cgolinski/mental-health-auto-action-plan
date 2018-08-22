@@ -75,6 +75,9 @@ export class UserForm extends React.Component {
                 required: val => val && val.length,
                 validEmailFormat: val =>
                   /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
+                // consider not doing email validation with regex
+                // instead just look for @ and .
+                // indexOf('@') > -1 && indexof('.') > -1
               }}
               errors={{
                 required: val => !val || !val.length,
@@ -103,7 +106,6 @@ export class UserForm extends React.Component {
                 required: val => val && val.length,
                 validPhoneNumber: val => /^[0-9]{5,12}$/i.test(val)
                 // CAROLINE TODO: ^ Research how to validate international phone numbers
-                // CAROLINE TODO: ^ Research what the i is after the regex string
               }}
               errors={{
                 required: val => !val || !val.length,

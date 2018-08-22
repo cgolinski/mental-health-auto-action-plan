@@ -1,1 +1,1 @@
-export { TasksForm } from './tasksForm.component';
+export { TasksForm } from './tasksForm.container';

@@ -6,7 +6,7 @@ import { Task } from '../task/task.component';
 
 import { RowCountChangeButton } from './tasksForm.style';
 
-export class TasksForm extends React.Component {
+export class TasksFormComponent extends React.Component {
   state = {
     numberOfTaskRows: 3
   };
@@ -20,6 +20,9 @@ export class TasksForm extends React.Component {
 
   handleSubmit(tasks) {
     console.log('You clicked submit!');
+    this.props.submitTasks(tasks);
+    // ^ CAROLINE: or should we be using an action from react-redux-form?
+
     // Do whatever you like in here.
     // If you connect the UserForm to the Redux store,
     // you can dispatch actions such as:

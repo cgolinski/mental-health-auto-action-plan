@@ -15,7 +15,6 @@ export const SubmitButton = styled('button')`
   b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib
 `;
 SubmitButton.displayName = 'SubmitButton';
-// CAROLINE TODO: Why is hover grow style not working?
 
 export const Fieldset = styled('fieldset')``;
 Fieldset.displayName = 'Fieldset';
@@ -29,7 +28,6 @@ export const RRFControlText = styled(Control.text)`
   border-box pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100
 `;
 RRFControlText.displayName = 'RRFControlText';
-// CAROLINE TODO: Why are hover styles not working?
 
 export const RRFErrors = styled(Errors)`
   pt1 bg-transparent red flex flex-column f6
