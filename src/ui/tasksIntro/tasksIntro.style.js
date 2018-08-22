@@ -13,11 +13,14 @@ Tagline.displayName = 'Tagline';
 export const Intro = styled('h2')`
   fw2 f4 lh-copy mt0 mb3 pt3
 `;
+Intro.displayName = 'Intro';
+
 export const SampleTasks = styled('p')`
   pt4 fw1 f5 mt0 mb3
 `;
+SampleTasks.displayName = 'SampleTasks';
 
 export const SampleTasksUl = styled('ul')`
 list fw1 f5 mt0 pb3
-
 `;
+SampleTasksUl.displayName = 'SampleTasksUl';

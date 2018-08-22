@@ -1,6 +1,6 @@
 import styled from 'tachyons-components';
 
-export const AddRowButton = styled('button')`
-  button-reset b bn f6 
+export const RowCountChangeButton = styled('button')`
+  button-reset b bn f6 pointer
 `;
-AddRowButton.displayName = 'AddRowButton';
+RowCountChangeButton.displayName = 'RowCountChangeButton';

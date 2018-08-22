@@ -11,7 +11,8 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import { App } from './ui/app';
 import { UserForm } from './ui/userForm/userForm.component';
-import { TasksPage } from './ui/tasksPage.component';
+import { TasksPage } from './ui/tasksPage/tasksPage.component';
+import 'tachyons';
 
 const loggerMiddleware = createLogger();
 

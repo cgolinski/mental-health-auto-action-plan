@@ -4,7 +4,7 @@ import { Div } from '../app/app.style';
 import { Legend, RRFForm, SubmitButton } from '../shared/form/form.style';
 import { Task } from '../task/task.component';
 
-import { AddRowButton } from './tasksForm.style';
+import { RowCountChangeButton } from './tasksForm.style';
 
 export class TasksForm extends React.Component {
   state = {
@@ -35,17 +35,15 @@ export class TasksForm extends React.Component {
           <Task taskNumber={i} key={i} />
         ))}
         <Div flex flex-column items-start>
-          <AddRowButton onClick={this.addTaskRow} shadow-hover>
+          <RowCountChangeButton mb3 onClick={this.addTaskRow}>
             + Add another task
-          </AddRowButton>
-          <AddRowButton onClick={this.removeLastTaskRow} shadow-hover>
+          </RowCountChangeButton>
+          <RowCountChangeButton onClick={this.removeLastTaskRow}>
             - Remove last task
-          </AddRowButton>
+          </RowCountChangeButton>
         </Div>
         <Div pt4>
-          <SubmitButton type="submit" shadow-hover>
-            Submit Tasks!
-          </SubmitButton>
+          <SubmitButton type="submit">Submit Tasks!</SubmitButton>
         </Div>
       </RRFForm>
     );
