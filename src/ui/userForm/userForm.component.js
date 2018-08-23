@@ -11,6 +11,15 @@ import {
   SubmitButton
 } from '../shared/form/form.style';
 
+import {
+  isEmpty,
+  isInvalidEmailFormat,
+  isInvalidPhoneNumberFormat,
+  isValidEmailFormat,
+  isValidPhoneNumberFormat,
+  isValidString
+} from '../shared/form/form.util';
+
 export class UserForm extends React.Component {
   handleSubmit(user) {
     // Do whatever you like in here.
@@ -30,10 +39,10 @@ export class UserForm extends React.Component {
               model="user.name"
               id="user.name"
               validators={{
-                required: val => val && val.length
+                required: isValidString
               }}
               errors={{
-                required: val => !val || !val.length
+                required: isEmpty
               }}
             />
             <RRFErrors
@@ -51,21 +60,14 @@ export class UserForm extends React.Component {
               model="user.email"
               id="user.email"
               validators={{
-                required: val => val && val.length,
-                validEmailFormat: val =>
-                  // /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
-                  val.indexOf('@') > 0 && val.indexOf('.') > 2
-                // consider not doing email validation with regex
-                // instead just look for @ and .
-                // indexOf('@') > -1 && indexof('.') > -1
+                required: isValidString,
+                validEmailFormat: isValidEmailFormat
               }}
               errors={{
-                required: val => !val || !val.length,
-                validEmailFormat: val =>
-                  !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
-                // !val.indexOf('@') > 0 || !val.indexOf('.') > 2
+                required: isEmpty,
+                validEmailFormat: isInvalidEmailFormat
               }}
-            />{' '}
+            />
             <RRFErrors
               className="errors"
               model="user.email"
@@ -84,13 +86,12 @@ export class UserForm extends React.Component {
               model="user.mobilePhone"
               id="user.mobilePhone"
               validators={{
-                validPhoneNumber: val => /^[0-9]{5,12}$/i.test(val)
-                // CAROLINE TODO: ^ Research how to validate international phone numbers
+                validPhoneNumber: isValidPhoneNumberFormat
               }}
               errors={{
-                validPhoneNumber: val => val && !/^[0-9]{5,12}$/i.test(val)
+                validPhoneNumber: isInvalidPhoneNumberFormat
               }}
-            />{' '}
+            />
             <RRFErrors
               className="errors"
               model="user.mobilePhone"
