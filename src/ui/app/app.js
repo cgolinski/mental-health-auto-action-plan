@@ -6,6 +6,12 @@ import { Link } from 'react-router';
 import { Div, H1 } from './app.style';
 
 export class App extends Component {
+  componentDidMount() {
+    fetch('/tasks')
+      .then(data => data.json())
+      .then(data => console.log(data));
+  }
+  // ^ TODO: move to core/api/tasks.api
   render() {
     return (
       <Div pt4 flex flex-column className="App">

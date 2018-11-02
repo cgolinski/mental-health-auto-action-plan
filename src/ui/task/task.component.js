@@ -19,15 +19,15 @@ import {
 export const Task = ({ taskNumber }) => (
   <Fieldset ba b--transparent ph0 mh0 mv4>
     <Div mv3>
-      <FormItemLabel htmlFor="tasks.summary">
+      <FormItemLabel htmlFor="tasks.taskSummary">
         <Span>Task</Span>
         <Span gray normal pl1>
           (what would you like help with?)
         </Span>
       </FormItemLabel>
       <RRFControlText
-        model={`tasks[${taskNumber}].summary`}
-        id="tasks.summary"
+        model={`tasks[${taskNumber}].taskSummary`}
+        id="tasks.taskSummary"
         validators={{
           required: isValidString
         }}
@@ -37,7 +37,7 @@ export const Task = ({ taskNumber }) => (
       />
       <RRFErrors
         className="errors"
-        model={`tasks[${taskNumber}].summary`}
+        model={`tasks[${taskNumber}].taskSummary`}
         show="touched"
         messages={{
           required: 'Required'
@@ -45,7 +45,7 @@ export const Task = ({ taskNumber }) => (
       />
     </Div>
     <Div mv3>
-      <FormItemLabel htmlFor="tasks.details">
+      <FormItemLabel htmlFor="tasks.taskDetails">
         <Span>More details</Span>
         <Span gray normal pl1>
           (how? where? when?)
@@ -55,14 +55,14 @@ export const Task = ({ taskNumber }) => (
         </Span>
       </FormItemLabel>
       <RRFControlText
-        model={`tasks[${taskNumber}].details`}
-        id="tasks.details"
+        model={`tasks[${taskNumber}].taskDetails`}
+        id="tasks.taskDetails"
         validators={{}}
         errors={{}}
       />
       <RRFErrors
         className="errors"
-        model={`tasks[${taskNumber}].details`}
+        model={`tasks[${taskNumber}].taskDetails`}
         show="touched"
         messages={{}}
       />

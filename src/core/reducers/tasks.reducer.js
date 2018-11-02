@@ -1,10 +1,9 @@
-// import { ACTION_TYPES } from '../actions/actionTypes';
+import { ACTION_TYPES } from '../actions/actionTypes';
 
 const initialTasksState = [
   {
-    summary: '',
-    details: '',
-    frequency: '',
+    taskSummary: '',
+    taskDetails: '',
     contact: {
       name: '',
       email: '',
@@ -15,6 +14,12 @@ const initialTasksState = [
 
 export const tasksReducer = (state = initialTasksState, action) => {
   switch (action.type) {
+    case ACTION_TYPES.SUBMIT_TASKS:
+      console.log('reducer heard SUBMIT_TASKS action');
+      return 1;
+    case ACTION_TYPES.POST_TASKS:
+      console.log('reducer heard POST_TASKS action');
+      return 1;
     default:
       return state;
   }
