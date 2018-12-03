@@ -16,7 +16,8 @@ export class App extends Component {
         <H1 pl4>Mental health app</H1>
         {/* <ShoutSample /> */}
         <Link to="/sign-up">Sign up</Link>
-        <Link to="/enter-tasks">Enter tasks</Link>
+        <Link to="/enter-tasks">Enter new tasks</Link>
+        <Link to="/view-tasks">View all tasks</Link>
       </Div>
     );
   }

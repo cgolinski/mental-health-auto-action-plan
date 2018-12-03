@@ -15,7 +15,8 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import { App } from './ui/app';
 import { UserForm } from './ui/userForm/userForm.component';
-import { TasksPage } from './ui/tasksPage/tasksPage.component';
+import { EnterTasksPage } from './ui/enterTasksPage/enterTasksPage.component';
+import { ViewTasksPage } from './ui/viewTasksPage/viewTasksPage.component';
 
 const epicMiddleware = createEpicMiddleware();
 const loggerMiddleware = createLogger();
@@ -35,7 +36,8 @@ const ReduxApp = () => (
     <Router history={history}>
       <Route path="/" component={App} />
       <Route path="sign-up" component={UserForm} />
-      <Route path="enter-tasks" component={TasksPage} />
+      <Route path="enter-tasks" component={EnterTasksPage} />
+      <Route path="view-tasks" component={ViewTasksPage} />
     </Router>
   </Provider>
 );
