@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 
 // import { ShoutSample } from '../shoutSample.component';
 
 import { Div, H1 } from './app.style';
-import { getTasks } from '../../core/api/tasks.api.js';
+import { getTasks } from '../../core/actions';
 
-export class App extends Component {
+export class AppComponent extends Component {
   componentDidMount() {
-    getTasks();
+    this.props.getTasks();
   }
   render() {
     return (
@@ -22,3 +23,11 @@ export class App extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({});
+const mapDispatchToProps = { getTasks };
+
+export const App = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AppComponent);

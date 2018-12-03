@@ -4,8 +4,12 @@ export const toggleShout = () => ({
   type: ACTION_TYPES.TOGGLE_SHOUT,
 });
 
-export const getTasks = tasks => ({
+export const getTasks = () => ({
   type: ACTION_TYPES.GET_TASKS,
+});
+
+export const setTasks = tasks => ({
+  type: ACTION_TYPES.SET_TASKS,
   payload: tasks,
 });
 
