@@ -5,7 +5,7 @@ import {
   Fieldset,
   FormItemLabel,
   RRFControlText,
-  RRFErrors
+  RRFErrors,
 } from '../shared/form/form.style';
 import {
   isEmpty,
@@ -13,39 +13,39 @@ import {
   isInvalidPhoneNumberFormat,
   isValidEmailFormat,
   isValidPhoneNumberFormat,
-  isValidString
+  isValidString,
 } from '../shared/form/form.util';
 
 export const Task = ({ taskNumber }) => (
   <Fieldset ba b--transparent ph0 mh0 mv4>
     <Div mv3>
-      <FormItemLabel htmlFor="tasks.taskSummary">
+      <FormItemLabel htmlFor="tasksForm.taskSummary">
         <Span>Task</Span>
         <Span gray normal pl1>
           (what would you like help with?)
         </Span>
       </FormItemLabel>
       <RRFControlText
-        model={`tasks[${taskNumber}].taskSummary`}
-        id="tasks.taskSummary"
+        model={`tasksForm[${taskNumber}].taskSummary`}
+        id="tasksForm.taskSummary"
         validators={{
-          required: isValidString
+          required: isValidString,
         }}
         errors={{
-          required: isEmpty
+          required: isEmpty,
         }}
       />
       <RRFErrors
         className="errors"
-        model={`tasks[${taskNumber}].taskSummary`}
+        model={`tasksForm[${taskNumber}].taskSummary`}
         show="touched"
         messages={{
-          required: 'Required'
+          required: 'Required',
         }}
       />
     </Div>
     <Div mv3>
-      <FormItemLabel htmlFor="tasks.taskDetails">
+      <FormItemLabel htmlFor="tasksForm.taskDetails">
         <Span>More details</Span>
         <Span gray normal pl1>
           (how? where? when?)
@@ -55,88 +55,90 @@ export const Task = ({ taskNumber }) => (
         </Span>
       </FormItemLabel>
       <RRFControlText
-        model={`tasks[${taskNumber}].taskDetails`}
-        id="tasks.taskDetails"
+        model={`tasksForm[${taskNumber}].taskDetails`}
+        id="tasksForm.taskDetails"
         validators={{}}
         errors={{}}
       />
       <RRFErrors
         className="errors"
-        model={`tasks[${taskNumber}].taskDetails`}
+        model={`tasksForm[${taskNumber}].taskDetails`}
         show="touched"
         messages={{}}
       />
     </Div>
     <Div mv3>
-      <FormItemLabel htmlFor="tasks.contact.name">Contact's name</FormItemLabel>
-      <RRFControlText
-        model={`tasks[${taskNumber}].contact.name`}
-        id="tasks.contact.name"
-        validators={{
-          required: isValidString
-        }}
-        errors={{
-          required: isEmpty
-        }}
-      />
-      <RRFErrors
-        className="errors"
-        model={`tasks[${taskNumber}].contact.name`}
-        show="touched"
-        messages={{
-          required: 'Required'
-        }}
-      />
-    </Div>
-    <Div mv3>
-      <FormItemLabel htmlFor="tasks.contact.email">
-        Contact's email
+      <FormItemLabel htmlFor="tasksForm.contact.name">
+        Contact's name
       </FormItemLabel>
       <RRFControlText
-        model={`tasks[${taskNumber}].contact.email`}
-        id="tasks.contact.email"
+        model={`tasksForm[${taskNumber}].contact.name`}
+        id="tasksForm.contact.name"
         validators={{
           required: isValidString,
-          validEmailFormat: isValidEmailFormat
         }}
         errors={{
           required: isEmpty,
-          validEmailFormat: isInvalidEmailFormat
         }}
       />
       <RRFErrors
         className="errors"
-        model={`tasks[${taskNumber}].contact.email`}
+        model={`tasksForm[${taskNumber}].contact.name`}
         show="touched"
         messages={{
           required: 'Required',
-          validEmailFormat: 'Invalid email address'
         }}
       />
     </Div>
     <Div mv3>
-      <FormItemLabel htmlFor="tasks.contact.mobilePhone">
+      <FormItemLabel htmlFor="tasksForm.contact.email">
+        Contact's email
+      </FormItemLabel>
+      <RRFControlText
+        model={`tasksForm[${taskNumber}].contact.email`}
+        id="tasksForm.contact.email"
+        validators={{
+          required: isValidString,
+          validEmailFormat: isValidEmailFormat,
+        }}
+        errors={{
+          required: isEmpty,
+          validEmailFormat: isInvalidEmailFormat,
+        }}
+      />
+      <RRFErrors
+        className="errors"
+        model={`tasksForm[${taskNumber}].contact.email`}
+        show="touched"
+        messages={{
+          required: 'Required',
+          validEmailFormat: 'Invalid email address',
+        }}
+      />
+    </Div>
+    <Div mv3>
+      <FormItemLabel htmlFor="tasksForm.contact.mobilePhone">
         <Span>Contact's mobile phone</Span>
         <Span gray normal f7 pl1>
           (optional)
         </Span>
       </FormItemLabel>
       <RRFControlText
-        model={`tasks[${taskNumber}].contact.mobilePhone`}
-        id="tasks.contact.mobilePhone"
+        model={`tasksForm[${taskNumber}].contact.mobilePhone`}
+        id="tasksForm.contact.mobilePhone"
         validators={{
-          validPhoneNumber: isValidPhoneNumberFormat
+          validPhoneNumber: isValidPhoneNumberFormat,
         }}
         errors={{
-          validPhoneNumber: isInvalidPhoneNumberFormat
+          validPhoneNumber: isInvalidPhoneNumberFormat,
         }}
       />
       <RRFErrors
         className="errors"
-        model={`tasks[${taskNumber}].contact.mobilePhone`}
+        model={`tasksForm[${taskNumber}].contact.mobilePhone`}
         show="touched"
         messages={{
-          validPhoneNumber: 'Invalid phone number'
+          validPhoneNumber: 'Invalid phone number',
         }}
       />
     </Div>

@@ -8,7 +8,7 @@ import { RowCountChangeButton } from './tasksForm.style';
 
 export class TasksFormComponent extends React.Component {
   state = {
-    numberOfTaskRows: 3
+    numberOfTaskRows: 3,
   };
 
   addTaskRow = () => {
@@ -32,7 +32,7 @@ export class TasksFormComponent extends React.Component {
 
   render() {
     return (
-      <RRFForm model="tasks" onSubmit={tasks => this.handleSubmit(tasks)}>
+      <RRFForm model="tasksForm" onSubmit={tasks => this.handleSubmit(tasks)}>
         <Legend>Tasks Form</Legend>
         {Array.from({ length: this.state.numberOfTaskRows }, (num, i) => (
           <Task taskNumber={i} key={i} />

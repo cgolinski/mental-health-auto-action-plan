@@ -7,12 +7,12 @@ const initialTasksState = [
     contact: {
       name: '',
       email: '',
-      mobilePhone: null
-    }
-  }
+      mobilePhone: null,
+    },
+  },
 ];
 
-export const tasksReducer = (state = initialTasksState, action) => {
+export const tasksFormReducer = (state = initialTasksState, action) => {
   switch (action.type) {
     case ACTION_TYPES.SUBMIT_TASKS:
       console.log('reducer heard SUBMIT_TASKS action');
