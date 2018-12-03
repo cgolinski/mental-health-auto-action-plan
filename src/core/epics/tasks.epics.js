@@ -10,7 +10,7 @@ import { ofType } from 'redux-observable';
 //     // .catch(err => err)
 //   );
 
-export const getTasksEpic(action$, store) => {}
+export const getTasksEpic = (action$, store) => {};
 
 export const postTasksEpic = (action$, store) =>
   action$.pipe(

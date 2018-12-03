@@ -4,14 +4,12 @@ import { Link } from 'react-router';
 // import { ShoutSample } from '../shoutSample.component';
 
 import { Div, H1 } from './app.style';
+import { getTasks } from '../../core/api/tasks.api.js';
 
 export class App extends Component {
   componentDidMount() {
-    fetch('/tasks')
-      .then(data => data.json())
-      .then(data => console.log(data));
+    getTasks();
   }
-  // ^ TODO: move to core/api/tasks.api
   render() {
     return (
       <Div pt4 flex flex-column className="App">
