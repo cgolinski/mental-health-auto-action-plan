@@ -8,7 +8,7 @@ import { RowCountChangeButton } from './tasksForm.style';
 
 export class TasksFormComponent extends React.Component {
   state = {
-    numberOfTaskRows: 3,
+    numberOfTaskRows: 1,
   };
 
   addTaskRow = () => {
