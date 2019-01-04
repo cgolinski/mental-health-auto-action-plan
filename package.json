@@ -25,5 +25,8 @@
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:8081",
-  "devDependencies": {}
+  "devDependencies": {},
+  "engines": {
+    "node": "^8.0.0"
+  }
 }
