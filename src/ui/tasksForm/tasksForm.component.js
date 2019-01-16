@@ -21,7 +21,6 @@ export class TasksFormComponent extends React.Component {
   handleSubmit(tasks) {
     console.log('You clicked submit!');
     this.props.submitTasks(tasks);
-    // ^ CAROLINE: or should we be using an action from react-redux-form?
 
     // Do whatever you like in here.
     // If you connect the UserForm to the Redux store,
