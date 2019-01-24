@@ -1,5 +1,11 @@
 ## TO DO
 
+- Merge fetch tasks branch into master, and delete fetch tasks branch.
+- Handle POST task success. (Display success message and updated tasks list?)
+- Handle POST task error.
+- Handle GET tasks error.
+- Improve security of form
+
 ### DEFECTS
 
 - Adding a task row counts as “touching” the existing tasks and the new task, causing validation to be checked. We do no want validation to be checked when adding a row for a new task.

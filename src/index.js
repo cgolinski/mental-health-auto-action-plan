@@ -6,7 +6,6 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
 import { createEpicMiddleware } from 'redux-observable';
-// import 'rxjs';
 import 'tachyons';
 
 import rootEpic from './core/epics';

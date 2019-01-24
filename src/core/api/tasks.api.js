@@ -1,6 +1,4 @@
-export const getTasksService = () =>
-  // fetch tasks from backend
-  fetch('/tasks').then(data => data.json());
+export const getTasksService = () => fetch('/tasks').then(data => data.json());
 
 export const postTasksService = body =>
   console.log('postTasksService in FE was called', { body }) ||

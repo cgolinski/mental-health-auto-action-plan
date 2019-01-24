@@ -1,7 +1,7 @@
 import { ACTION_TYPES } from '../actions/actionTypes';
 import { postTasks } from '../actions';
 import { getTasksService, postTasksService } from '../../core/api/tasks.api.js';
-import { mergeMap, map, switchMap } from 'rxjs/operators';
+import { mergeMap, map } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 
 export const getTasksEpic = action$ =>
@@ -17,10 +17,9 @@ export const getTasksEpic = action$ =>
 export const postTasksEpic = (action$, store) =>
   action$.pipe(
     ofType(ACTION_TYPES.SUBMIT_TASKS),
-    mergeMap(
-      ({ payload }) =>
-        // postTasksService(getToken(store.getState())).then(tasks =>
-        postTasksService(payload).then(tasks => postTasks(tasks))
-      // .catch(err => err)
+    mergeMap(({ payload }) =>
+      postTasksService(payload)
+        .then(tasks => postTasks(tasks))
+        .catch(err => console.log('There was an error:', err))
     )
   );
