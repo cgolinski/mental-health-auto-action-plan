@@ -17,9 +17,11 @@ export const getTasksEpic = action$ =>
 export const postTasksEpic = (action$, store) =>
   action$.pipe(
     ofType(ACTION_TYPES.SUBMIT_TASKS),
-    mergeMap(({ payload }) =>
-      postTasksService(payload)
-        .then(tasks => postTasks(tasks))
-        .catch(err => console.log('There was an error:', err))
-    )
+    mergeMap(({ payload }) => {
+      const payloadAsArray = Array.isArray(payload) ? payload : [payload];
+      postTasksService(payloadAsArray)
+        // .then(tasks => postTasks(tasks))
+        .then(payloadAsArray => postTasks(payloadAsArray))
+        .catch(err => console.log('There was an error:', err));
+    })
   );

@@ -1,6 +1,9 @@
 ## TO DO
 
-- Merge fetch tasks branch into master, and delete fetch tasks branch.
+- Fix postTasksEpic
+  TypeError: You provided 'undefined' where a stream was expected. You can provide an Observable, Promise, Array, or Iterable.
+- Do PR and merge fetch tasks branch into master, and delete fetch tasks branch.
+- Put tasks form submitted status in store
 - Handle POST task success. (Display success message and updated tasks list?)
 - Handle POST task error.
 - Handle GET tasks error.
@@ -8,6 +11,7 @@
 
 ### DEFECTS
 
+- Make sure req.body is always an array, even if it ony contains one object.
 - Adding a task row counts as “touching” the existing tasks and the new task, causing validation to be checked. We do no want validation to be checked when adding a row for a new task.
   - Maybe because component state changes and that triggers a rerender?
 
